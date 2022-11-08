@@ -33,3 +33,15 @@ function isValidSubsequence(array, sequence) {
   }
   return !sequence.length;
 }
+
+// Sorted Square Array
+// Solution 1
+function sortedSquaredArray(array) {
+  let newArr = [];
+  for (let num of array) {
+    newArr.push(num * num);
+  }
+  return newArr.sort(function (a, b) {
+    return a - b;
+  });
+}

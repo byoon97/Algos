@@ -26,3 +26,10 @@ function twoNumberSum(array, targetSum) {
 
 // Validate Subsequence
 // Solution 1
+
+function isValidSubsequence(array, sequence) {
+  for (let num of array) {
+    if (num === sequence[0]) sequence.splice(0, 1);
+  }
+  return !sequence.length;
+}

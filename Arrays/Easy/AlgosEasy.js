@@ -45,3 +45,21 @@ function sortedSquaredArray(array) {
     return a - b;
   });
 }
+
+// Tournament Winner
+// Solution 1
+
+function tournamentWinner(competitions, results) {
+  let hash = {};
+  competitions.forEach((match, index) => {
+    // go through each match and check if the team exists on hash table
+    // if it dosent, add to hash table with a score of 0
+    !hash[match[0]] ? (hash[match[0]] = 0) : null;
+    !hash[match[1]] ? (hash[match[1]] = 0) : null;
+    // check the corresponding results array and use the index to find the winner
+    // increment the score by 1 for the winner
+    results[index] === 1 ? (hash[match[0]] += 1) : (hash[match[1]] += 1);
+  });
+  // iterate through hash table and return key with highest value
+  return Object.keys(hash).reduce((a, b) => (hash[a] > hash[b] ? a : b));
+}

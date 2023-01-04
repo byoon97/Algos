@@ -63,6 +63,3 @@ function tournamentWinner(competitions, results) {
   // iterate through hash table and return key with highest value
   return Object.keys(hash).reduce((a, b) => (hash[a] > hash[b] ? a : b));
 }
-
-// Do not edit the line below.
-exports.tournamentWinner = tournamentWinner;

@@ -18,3 +18,20 @@ function calculateBranchSums(node, runningSum, sums) {
   calculateBranchSums(node.left, newRunningSum, sums);
   calculateBranchSums(node.right, newRunningSum, sums);
 }
+
+// Depth Sum
+// Solution 1
+
+function nodeDepths(root) {
+  return calculateDepthSum(root, 0);
+}
+
+function calculateDepthSum(root, sum) {
+  if (!root) return 0;
+
+  return (
+    sum +
+    calculateDepthSum(root.left, sum + 1) +
+    calculateDepthSum(root.right, sum + 1)
+  );
+}

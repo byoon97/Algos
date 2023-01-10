@@ -2,6 +2,7 @@
 // solution 1
 
 function removeDuplicatesFromLinkedList(linkedList) {
+  // edge case if LL dosen't exist
   if (!linkedList) return null;
   let current = linkedList.next;
   let prev = linkedList;

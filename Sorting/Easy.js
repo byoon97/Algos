@@ -16,3 +16,22 @@ function bubbleSort(array) {
   } while (checked);
   return array;
 }
+
+// insertion sort
+// solution 1
+
+function insertionSort(array) {
+  for (let i = 1; i < array.length; i++) {
+    let curr = array[i];
+    console.log("selected ele", curr);
+    let idx = null;
+    for (idx = i - 1; idx >= 0 && array[idx] > curr; idx--) {
+      console.log("swapping", array[idx + 1], array[idx]);
+      array[idx + 1] = array[idx];
+    }
+    console.log("2nd", array[idx + 1], curr);
+    array[idx + 1] = curr;
+    console.log(array);
+  }
+  return array;
+}

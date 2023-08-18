@@ -16,3 +16,23 @@ function binarySearch(array, target) {
   }
   return -1;
 }
+
+// Find Three Largest Numbers
+// Solution 1
+
+function findThreeLargestNumbers(array) {
+  const hash = [];
+  while (array.length > 0) {
+    let curr = array.shift();
+    if (hash.length < 3) {
+      hash.push(curr);
+    } else {
+      let min = Math.min(...hash);
+      let idx = hash.indexOf(min);
+      if (curr >= min) {
+        hash.splice(idx, 1, curr);
+      }
+    }
+  }
+  return hash.sort((a, b) => (a > b ? 1 : -1));
+}
